@@ -54,9 +54,6 @@ const App = () => {
       </div>
 
       <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-sm opacity-70 gap-2">
-        <span>
-          {molinoData && `Última actualización: ${molinoData.tiempo}`}
-        </span>
         <span className="flex items-center gap-2">
           {isConnected ? '🟢 Conectado' : '🔴 Desconectado'}
           {molinoData && (molinoData.run ? ' | ⚙️ Operando' : ' | ⏸️ Detenido')}
