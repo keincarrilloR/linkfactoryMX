@@ -7,11 +7,14 @@ import {
 } from 'react'
 
 type Molino1Data = {
+  pres_nitrogeno: number
   run: boolean
   piezas: number
   tiempo: string
   temp: number
+  estado: string
   flujonit: number
+  temp_combustion: number
 }
 
 type SocketContextType = {
@@ -38,7 +41,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
   const [isConnected, setIsConnected] = useState(false)
 
   useEffect(() => {
-    const socket = new WebSocket('ws://10.101.100.207:1890/ws/')
+    const socket = new WebSocket(import.meta.env.VITE_SOCKET_URL)
 
     socket.onopen = () => {
       console.log('Conexión establecida con Molino 1 - MX')

@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <DashboardLayout>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-5 gap-6">
         <StatusCard
           title="Temperatura Horno Zinc (°C)"
           value={molinoData?.temp.toString() || '--'}
@@ -17,7 +17,23 @@ const App = () => {
         />
 
         <StatusCard
-          title="Flujo Nitrógeno"
+          title="Temperatura Combustión (°C)"
+          value={molinoData?.temp_combustion.toString() || '--'}
+          min="450"
+          max="520"
+          color="orange"
+        />
+
+        <StatusCard
+          title="Presión Nitrógeno (PSI)"
+          value={molinoData?.pres_nitrogeno.toString() || '--'}
+          min="100"
+          max="120"
+          color="blue"
+        />
+
+        <StatusCard
+          title="Flujo Nitrógeno (L/min)"
           value={molinoData?.flujonit.toString() || '--'}
           color="blue"
         />
@@ -30,7 +46,6 @@ const App = () => {
       </div>
 
       <div className="mt-4 flex justify-between items-center text-sm opacity-70">
-        <span></span>
         <span className="flex items-center gap-2">
           {isConnected ? '🟢 Conectado' : '🔴 Desconectado'}
           {molinoData && (molinoData.run ? ' | ⚙️ Operando' : ' | ⏸️ Detenido')}

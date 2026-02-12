@@ -14,20 +14,25 @@ export default function StatusCard({
   color = 'green'
 }: CardProps) {
   const colors = {
-    green: 'bg-green-600',
-    orange: 'bg-orange-500',
-    blue: 'bg-blue-600'
+    green: 'bg-green-600 border-green-500',
+    orange: 'bg-orange-500 border-orange-400',
+    blue: 'bg-blue-600 border-blue-500'
   }
 
   return (
-    <div className={`${colors[color]} rounded-xl p-4 text-white shadow`}>
-      <h3 className="text-sm font-semibold">{title}</h3>
-      <p className="text-3xl font-bold mt-2">{value}</p>
+    <div
+      className={`${colors[color]} rounded-lg p-5 text-white shadow-lg border-l-4 hover:shadow-xl transition-shadow`}
+    >
+      <h3 className="text-xs uppercase tracking-wide opacity-80 mb-2">
+        {title}
+      </h3>
+
+      <p className="text-4xl font-bold mb-3">{value}</p>
 
       {(min || max) && (
-        <div className="flex justify-between text-xs mt-2 opacity-80">
-          <span>{min && `Min: ${min}`}</span>
-          <span>{max && `Max: ${max}`}</span>
+        <div className="flex justify-between text-sm pt-3 border-t border-white/20">
+          {min && <span className="opacity-75">Min: {min}</span>}
+          {max && <span className="opacity-75">Max: {max}</span>}
         </div>
       )}
     </div>
