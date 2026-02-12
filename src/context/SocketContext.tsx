@@ -9,6 +9,7 @@ import {
 type Molino1Data = {
   pres_nitrogeno: number
   run: boolean
+  velocidad: number
   piezas: number
   tiempo: string
   temp: number

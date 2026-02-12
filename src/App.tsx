@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <DashboardLayout>
-      <div className="grid md:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         <StatusCard
           title="Temperatura Horno Zinc (°C)"
           value={molinoData?.temp.toString() || '--'}
@@ -22,6 +22,14 @@ const App = () => {
           min="450"
           max="520"
           color="orange"
+        />
+
+        <StatusCard
+          title="Velocidad (ppm)"
+          value={molinoData?.velocidad.toString() || '--'}
+          min="80"
+          max="100"
+          color="green"
         />
 
         <StatusCard
@@ -45,7 +53,10 @@ const App = () => {
         />
       </div>
 
-      <div className="mt-4 flex justify-between items-center text-sm opacity-70">
+      <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-sm opacity-70 gap-2">
+        <span>
+          {molinoData && `Última actualización: ${molinoData.tiempo}`}
+        </span>
         <span className="flex items-center gap-2">
           {isConnected ? '🟢 Conectado' : '🔴 Desconectado'}
           {molinoData && (molinoData.run ? ' | ⚙️ Operando' : ' | ⏸️ Detenido')}
