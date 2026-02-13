@@ -1,5 +1,5 @@
 import StatusCard from './components/cards/StatusCard'
-import { useSocket } from './context/SocketContext'
+import { useSocket } from './hooks/useSocket'
 import DashboardLayout from './layout/Layout'
 
 const App = () => {

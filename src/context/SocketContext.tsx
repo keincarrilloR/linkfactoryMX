@@ -1,24 +1,15 @@
 import {
   createContext,
-  useContext,
   useEffect,
   useState,
+  useRef,
   type ReactNode
 } from 'react'
-import type { Molino1Data, SocketContextType } from '../types/index'
+import type { Molino1Data, SocketContextType } from '../types'
 
-// Crea un contexto inicialmente indefinido
-const SocketContext = createContext<SocketContextType | undefined>(undefined)
-
-export const useSocket = () => {
-  const context = useContext(SocketContext)
-  if (!context) {
-    throw new Error(
-      'Error al usar el contexto del Socket, debe de estar dentro del Provider'
-    )
-  }
-  return context
-}
+export const SocketContext = createContext<SocketContextType | undefined>(
+  undefined
+)
 
 type SocketProviderProps = {
   children: ReactNode
@@ -28,32 +19,29 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
   const [molinoData, setMolinoData] = useState<Molino1Data | null>(null)
   const [isConnected, setIsConnected] = useState(false)
 
+  const socketRef = useRef<WebSocket | null>(null)
+
   useEffect(() => {
     const socket = new WebSocket(import.meta.env.VITE_SOCKET_URL)
+    socketRef.current = socket
 
     socket.onopen = () => {
-      console.log('Conexión establecida con Molino 1 - MX')
+      console.log('Conectado')
       setIsConnected(true)
     }
 
     socket.onmessage = event => {
       try {
         const data = JSON.parse(event.data)
-        if (data.mx001) {
+        if (data?.mx001) {
           setMolinoData(data.mx001)
         }
       } catch (error) {
-        console.error('Error al parsear datos:', error)
+        console.error(error)
       }
     }
 
-    socket.onerror = error => {
-      console.error('❌ Error en WebSocket:', error)
-      setIsConnected(false)
-    }
-
     socket.onclose = () => {
-      console.log('🔌 Conexión cerrada')
       setIsConnected(false)
     }
 
