@@ -5,13 +5,9 @@ import {
   useState,
   type ReactNode
 } from 'react'
-import type { Molino1Data } from '../types/molinoData'
+import type { Molino1Data, SocketContextType } from '../types/index'
 
-type SocketContextType = {
-  molinoData: Molino1Data | null
-  isConnected: boolean
-}
-
+// Crea un contexto inicialmente indefinido
 const SocketContext = createContext<SocketContextType | undefined>(undefined)
 
 export const useSocket = () => {
