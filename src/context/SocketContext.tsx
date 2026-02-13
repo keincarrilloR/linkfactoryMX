@@ -5,18 +5,7 @@ import {
   useState,
   type ReactNode
 } from 'react'
-
-type Molino1Data = {
-  pres_nitrogeno: number
-  run: boolean
-  velocidad: number
-  piezas: number
-  tiempo: string
-  temp: number
-  estado: string
-  flujonit: number
-  temp_combustion: number
-}
+import type { Molino1Data } from '../types/molinoData'
 
 type SocketContextType = {
   molinoData: Molino1Data | null
@@ -28,7 +17,9 @@ const SocketContext = createContext<SocketContextType | undefined>(undefined)
 export const useSocket = () => {
   const context = useContext(SocketContext)
   if (!context) {
-    throw new Error('useSocket debe usarse dentro de SocketProvider')
+    throw new Error(
+      'Error al usar el contexto del Socket, debe de estar dentro del Provider'
+    )
   }
   return context
 }
