@@ -1,1 +1,15 @@
 @import 'tailwindcss';
+
+@theme {
+  --color-main: #0f172a; /* Fondo principal */
+  --color-panel: #1e293b; /* Tarjetas */
+  --color-elevated: #273449; /* Hover / elevado */
+  --color-border: #334155; /* Bordes */
+  --color-font-primary: #f8fafc; /* Texto principal */
+
+  --color-on: #9dff8c; /* Color para estado activo */
+  --color-on-fondo: #047857; /* Fondo para estado activo */
+
+  --color-off: #ffc2c2; /* Color para estado inactivo */
+  --color-off-fondo: #b91c1c; /* Fondo para estado inactivo */
+}
