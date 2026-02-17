@@ -47,7 +47,7 @@ const Variables: React.FC = () => {
       </StatusCard>
 
       <StatusCard
-        title="Voltaje Thermatool (V)"
+        title="Voltaje Thermatool (%V)"
         value={molinoData?.volt_thermatool.toString() || '--'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/df9fef453dcd4e58aa5d7feb544bb3c8?orgId=1"
         min="100"
@@ -65,6 +65,21 @@ const Variables: React.FC = () => {
             : '--'
         }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/56b63eb4e6724e159caaa8e84165a6ee?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <PlugZap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="Corriente de Armadura Breakdown (A)"
+        value={
+          molinoData?.corr_breakdown
+            ? (molinoData.corr_breakdown / 100).toFixed(2).toString()
+            : '--'
+        }
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/40e69cfe1bed470383a13b4c08f0b8ab?orgId=1"
         min="100"
         max="120"
         color="blue"
