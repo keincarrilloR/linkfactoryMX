@@ -24,12 +24,12 @@ const StatusCard = ({
       href={grafana}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:scale-105 transition-transform"
+      className="hover:scale-105 transition-transform h-full block"
     >
       <div
-        className={`${colors[color]} rounded-lg p-5 text-white shadow-lg bg-gre hover:shadow-xl transition-shadow`}
+        className={`${colors[color]} h-full flex flex-col justify-between rounded-lg flex-1 p-5 text-white shadow-lg bg-gre hover:shadow-xl transition-shadow`}
       >
-        <h3 className="text-xs uppercase tracking-wide opacity-80 mb-2">
+        <h3 className="text-lg uppercase tracking-wide opacity-80 mb-2">
           {title}
         </h3>
         <div className="flex items-center gap-1">
