@@ -33,18 +33,11 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Corriente de Armadura Finpass (A)"
-        value={molinoData?.corr_finpass.toString() || '--'}
-        grafana="http://monitormx.rymco.io:9030/public-dashboards/76046ee620514f9aa4e6008ce98c906d?orgId=1"
-        min="100"
-        max="120"
-        color="blue"
-      >
-        <PlugZap className={classesIcons} />
-      </StatusCard>
-
-      <StatusCard
-        title="Corriente de Armadura Finpass (A)"
-        value={molinoData?.corr_finpass.toString() || '--'}
+        value={
+          molinoData?.corr_finpass
+            ? (molinoData.corr_finpass / 100).toFixed(2).toString()
+            : '--'
+        }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/76046ee620514f9aa4e6008ce98c906d?orgId=1"
         min="100"
         max="120"
@@ -62,6 +55,21 @@ const Variables: React.FC = () => {
         color="blue"
       >
         <Zap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="Corriente de Armadura Sizing (A)"
+        value={
+          molinoData?.corr_sizing
+            ? (molinoData.corr_sizing / 100).toFixed(2).toString()
+            : '--'
+        }
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/56b63eb4e6724e159caaa8e84165a6ee?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <PlugZap className={classesIcons} />
       </StatusCard>
     </section>
   )
