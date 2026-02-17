@@ -3,50 +3,26 @@ import StatusCard from '../cards/StatusCard'
 
 const Variables: React.FC = () => {
   const { molinoData } = useSocket()
+
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+    <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <h2 className="col-span-full text-lg font-semibold">Variables</h2>
       <StatusCard
-        title="Temperatura Horno Zinc (°C)"
-        value={molinoData?.temp.toString() || '--'}
-        min="453"
-        max="482"
-        color="orange"
-      />
-
-      <StatusCard
-        title="Temperatura Combustión (°C)"
-        value={molinoData?.temp_combustion.toString() || '--'}
-        min="450"
-        max="520"
-        color="orange"
-      />
-
-      <StatusCard
-        title="Velocidad (ppm)"
+        title="Velocidad (Mts/min)"
         value={molinoData?.velocidad.toString() || '--'}
-        min="80"
-        max="100"
-        color="green"
-      />
-
-      <StatusCard
-        title="Presión Nitrógeno (PSI)"
-        value={molinoData?.pres_nitrogeno.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/b5672b592aad43c88444bda7e3ec9520?orgId=1"
         min="100"
         max="120"
         color="blue"
       />
 
       <StatusCard
-        title="Flujo Nitrógeno (L/min)"
-        value={molinoData?.flujonit.toString() || '--'}
+        title="Corriente Tocco (A)"
+        value={molinoData?.corr_tocco.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/b49e48001313436583bfa1c2d651b5ea?orgId=1"
+        min="100"
+        max="120"
         color="blue"
-      />
-
-      <StatusCard
-        title="Piezas Procesadas"
-        value={molinoData?.piezas.toString() || '--'}
-        color="green"
       />
     </section>
   )
