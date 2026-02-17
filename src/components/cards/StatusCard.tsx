@@ -7,6 +7,7 @@ type CardProps = {
   max?: string
   color?: 'green' | 'orange' | 'blue'
   grafana?: string
+  children?: React.ReactNode
 }
 
 const StatusCard = ({
@@ -15,7 +16,8 @@ const StatusCard = ({
   min,
   max,
   color = 'green',
-  grafana
+  grafana,
+  children
 }: CardProps) => {
   return (
     <a
@@ -30,8 +32,10 @@ const StatusCard = ({
         <h3 className="text-xs uppercase tracking-wide opacity-80 mb-2">
           {title}
         </h3>
-
-        <p className="text-4xl font-bold mb-3">{value}</p>
+        <div className="flex items-center gap-2">
+          {children}
+          <p className="text-4xl font-bold mb-3">{value}</p>
+        </div>
 
         {(min || max) && (
           <div className="flex justify-between text-md pt-3 border-t border-white/20">
