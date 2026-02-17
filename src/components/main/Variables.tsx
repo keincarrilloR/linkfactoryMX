@@ -86,6 +86,17 @@ const Variables: React.FC = () => {
       >
         <PlugZap className={classesIcons} />
       </StatusCard>
+
+      <StatusCard
+        title="Corriente de Thermatool (%A)"
+        value={molinoData?.corr_thermatool.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/d480ccd85d1347b382b771290cd830a0?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <PlugZap className={classesIcons} />
+      </StatusCard>
     </section>
   )
 }
