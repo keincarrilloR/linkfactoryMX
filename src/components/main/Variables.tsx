@@ -119,6 +119,61 @@ const Variables: React.FC = () => {
       >
         <Droplet className={classesIcons} />
       </StatusCard>
+
+      <StatusCard
+        title="temp agua entrada thermatool (°C)"
+        value={
+          Math.floor(
+            molinoData?.temp_agua_dest_ent_thermatool || 0
+          ).toString() || '--'
+        }
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/fd7ae4e0347d4f64ad357dbf4395e6cb"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Droplet className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="Potencia Thermatool (kW)"
+        value={molinoData?.pot_thermatool.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/6bb14344159f45f9b1ce94d0118ffa6a"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Zap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="temp agua salida tocco (°C)"
+        value={
+          Math.ceil(molinoData?.temp_agua_dest_sal_tocco || 0).toString() ||
+          '--'
+        }
+        grafana="http://monitorm.rymco.io:9030/public-dashboards/984bc55f8705400f902abe55b2dfd81a"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Droplet className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="temp agua salida thermatool (°C)"
+        value={
+          Math.ceil(
+            molinoData?.temp_agua_dest_sal_thermatool || 0
+          ).toString() || '--'
+        }
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/dbe8ea3e2c6f4ad8b559c32220e0bfc9?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Droplet className={classesIcons} />
+      </StatusCard>
     </section>
   )
 }
