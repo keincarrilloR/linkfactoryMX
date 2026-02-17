@@ -97,6 +97,17 @@ const Variables: React.FC = () => {
       >
         <PlugZap className={classesIcons} />
       </StatusCard>
+
+      <StatusCard
+        title="Voltaje Precalentador Tocco (V)"
+        value={molinoData?.volt_pre_tocco.toString() || '--'}
+        grafana="http://monitomx.rymco.io:9030/public-dashboards/66dd1e6b6e91409cb656251824e72f0a"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <PlugZap className={classesIcons} />
+      </StatusCard>
     </section>
   )
 }
