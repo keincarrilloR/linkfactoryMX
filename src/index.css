@@ -13,4 +13,8 @@
 
   --color-off: #ffc2c2; /* Color para estado inactivo */
   --color-off-fondo: #b91c1c; /* Fondo para estado inactivo */
+
+  --color-error: #ef4444; /* Rojo para errores */
+  --color-warning: #f59e0b; /* Naranja para advertencias */
+  --color-success: #10b981; /* Verde para éxito */
 }
