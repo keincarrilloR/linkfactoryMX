@@ -1,5 +1,7 @@
+import { Gauge, PillBottle, PlugZap, Thermometer, Waves } from 'lucide-react'
 import { useSocket } from '../../hooks/useSocket'
 import StatusCard from '../cards/StatusCard'
+import { classesIcons } from '../../styles/icons'
 
 const Galvanizado: React.FC = () => {
   const { molinoData } = useSocket()
@@ -14,7 +16,9 @@ const Galvanizado: React.FC = () => {
         min="453"
         max="482"
         color="orange"
-      />
+      >
+        <Thermometer className={classesIcons} />
+      </StatusCard>
 
       <StatusCard
         title="Temperatura Combustión (°C)"
@@ -23,7 +27,9 @@ const Galvanizado: React.FC = () => {
         min="450"
         max="520"
         color="orange"
-      />
+      >
+        <Thermometer className={classesIcons} />
+      </StatusCard>
 
       <StatusCard
         title="Flujo Nitrógeno (L/min)"
@@ -32,7 +38,9 @@ const Galvanizado: React.FC = () => {
         min="100"
         max="120"
         color="blue"
-      />
+      >
+        <Waves className={classesIcons} />
+      </StatusCard>
 
       <StatusCard
         title="Presión Nitrógeno (PSI)"
@@ -41,7 +49,9 @@ const Galvanizado: React.FC = () => {
         min="100"
         max="120"
         color="blue"
-      />
+      >
+        <PillBottle className={classesIcons} />
+      </StatusCard>
 
       <StatusCard
         title="Velocidad (Mts/min)"
@@ -50,7 +60,9 @@ const Galvanizado: React.FC = () => {
         min="100"
         max="120"
         color="blue"
-      />
+      >
+        <Gauge className={classesIcons} />
+      </StatusCard>
 
       <StatusCard
         title="Corriente Tocco (A)"
@@ -59,7 +71,9 @@ const Galvanizado: React.FC = () => {
         min="100"
         max="120"
         color="blue"
-      />
+      >
+        <PlugZap className={classesIcons} />
+      </StatusCard>
     </section>
   )
 }
