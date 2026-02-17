@@ -1,4 +1,4 @@
-import { Gauge, PlugZap, Zap } from 'lucide-react'
+import { Droplet, Gauge, PlugZap, Zap } from 'lucide-react'
 import { useSocket } from '../../hooks/useSocket'
 import StatusCard from '../cards/StatusCard'
 import { classesIcons } from '../../styles/icons'
@@ -107,6 +107,17 @@ const Variables: React.FC = () => {
         color="blue"
       >
         <PlugZap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="temp agua entrada precalentador tocco (°C)"
+        value={molinoData?.temp_agua_dest_ent_tocco.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/b41c71f0b160419bba1d7c82dad978ca?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Droplet className={classesIcons} />
       </StatusCard>
     </section>
   )

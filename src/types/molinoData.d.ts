@@ -16,6 +16,7 @@ type Molino1Data = {
   corr_breakdown: number
   corr_thermatool: number
   volt_pre_tocco: number
+  temp_agua_dest_ent_tocco: number
 }
 
 export type { Molino1Data }
