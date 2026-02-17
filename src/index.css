@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --color-white: #f8fafc; /* Blanco */
   --color-main: #0f172a; /* Fondo principal */
   --color-panel: #1e293b; /* Tarjetas */
   --color-elevated: #273449; /* Hover / elevado */
