@@ -1,4 +1,4 @@
-import { Gauge, PlugZap } from 'lucide-react'
+import { Gauge, PlugZap, Zap } from 'lucide-react'
 import { useSocket } from '../../hooks/useSocket'
 import StatusCard from '../cards/StatusCard'
 import { classesIcons } from '../../styles/icons'
@@ -40,6 +40,28 @@ const Variables: React.FC = () => {
         color="blue"
       >
         <PlugZap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="Corriente de Armadura Finpass (A)"
+        value={molinoData?.corr_finpass.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/76046ee620514f9aa4e6008ce98c906d?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <PlugZap className={classesIcons} />
+      </StatusCard>
+
+      <StatusCard
+        title="Voltaje Thermatool (V)"
+        value={molinoData?.volt_thermatool.toString() || '--'}
+        grafana="http://monitormx.rymco.io:9030/public-dashboards/df9fef453dcd4e58aa5d7feb544bb3c8?orgId=1"
+        min="100"
+        max="120"
+        color="blue"
+      >
+        <Zap className={classesIcons} />
       </StatusCard>
     </section>
   )
