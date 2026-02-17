@@ -10,6 +10,7 @@ type Molino1Data = {
   temp_combustion: number
   corr_tocco: number
   velocidad: number
+  corr_finpass: number
 }
 
 export type { Molino1Data }
