@@ -32,7 +32,7 @@ const StatusCard = ({
         <h3 className="text-xs uppercase tracking-wide opacity-80 mb-2">
           {title}
         </h3>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {children}
           <p className="text-4xl font-bold mb-3">{value}</p>
         </div>
