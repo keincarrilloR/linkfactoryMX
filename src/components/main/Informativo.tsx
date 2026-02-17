@@ -35,15 +35,24 @@ const Informativo: React.FC = () => {
                   </span>
                 </div>
               </div>
-
-              <div className="flex items-center gap-3">
-                <Package className="w-7 h-7 text-production" />
-
-                <div className="flex flex-col">
-                  <span className="text-md opacity-70">Piezas procesadas</span>
-                  <span className="font-bold text-lg">
-                    {molinoData?.piezas || '--'}
+              <div className="flex items-center gap-10">
+                <div>
+                  <span className="text-lg opacity-70">
+                    {molinoData?.turno || '--'}
                   </span>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <Package className="w-7 h-7 text-production" />
+
+                  <div className="flex flex-col">
+                    <span className="text-md opacity-70">
+                      Piezas procesadas
+                    </span>
+                    <span className="font-bold text-lg">
+                      {molinoData?.piezas || '--'}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
