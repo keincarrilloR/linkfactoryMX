@@ -8,6 +8,8 @@ type Molino1Data = {
   estado: string
   flujonit: number
   temp_combustion: number
+  corr_tocco: number
+  velocidad: number
 }
 
 export type { Molino1Data }
