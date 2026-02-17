@@ -1,10 +1,12 @@
 import Clock from '../components/Clock'
+import { useSocket } from '../hooks/useSocket'
 
 interface Props {
   children?: React.ReactNode
 }
 
 const DashboardLayout = ({ children }: Props) => {
+  const { molinoData } = useSocket()
   return (
     <div className="min-h-screen bg-main text-font-primary p-6 space-y-6">
       <header className="flex justify-between items-center">
