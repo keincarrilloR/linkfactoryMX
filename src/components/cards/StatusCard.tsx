@@ -38,7 +38,7 @@ const StatusCard = ({
         </div>
 
         {(min || max) && (
-          <div className="flex justify-between text-md pt-3 border-t border-white/20">
+          <div className="flex justify-between text-lg pt-3 border-t border-white/20">
             {min && <span className="opacity-75 ">Min: {min}</span>}
             {max && <span className="opacity-75 ">Max: {max}</span>}
           </div>
