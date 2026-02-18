@@ -15,12 +15,12 @@ const App = () => {
         <Galvanizado />
         <Variables />
         <div className="mt-4 flex flex-col sm:flex-row justify-between items-center text-sm opacity-70 gap-2">
-          <span className="flex items-center gap-2 text-md">
+          <span className="flex items-center gap-2 text-lg">
             {isConnected ? 'Conectado' : 'Desconectado'}
             {isConnected ? (
-              <CircleCheck className="w-5 h-5 text-on" />
+              <CircleCheck className="w-6 h-6 text-success" />
             ) : (
-              <CircleX className="w-5 h-5 text-off" />
+              <CircleX className="w-6 h-6 text-error" />
             )}
           </span>
         </div>
