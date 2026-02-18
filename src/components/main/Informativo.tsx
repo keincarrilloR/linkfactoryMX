@@ -38,7 +38,7 @@ const Informativo: React.FC = () => {
               <div className="flex items-center gap-10">
                 <div>
                   <span className="text-lg opacity-70">
-                    {molinoData?.turno || '--'}
+                    {molinoData?.turno || '0'}
                   </span>
                 </div>
 
@@ -50,7 +50,7 @@ const Informativo: React.FC = () => {
                       Piezas procesadas
                     </span>
                     <span className="font-bold text-lg">
-                      {molinoData?.piezas || '--'}
+                      {molinoData?.piezas || '0'}
                     </span>
                   </div>
                 </div>
