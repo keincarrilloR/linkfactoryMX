@@ -13,14 +13,14 @@ const Informativo: React.FC = () => {
           <div
             className={`p-4 rounded-lg transition-all 
         ${
-          molinoData?.EstadoMol1 === 'Corriendo'
+          molinoData?.Variables.EstadoMol1 === 'Corriendo'
             ? 'border border-on bg-on-fondo'
             : 'border border-off bg-off-fondo'
         }`}
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                {molinoData?.EstadoMol1 === 'Corriendo' ? (
+                {molinoData?.Variables.EstadoMol1 === 'Corriendo' ? (
                   <Play className="w-7 h-7 text-on" />
                 ) : (
                   <Square className="w-7 h-7 text-off" />
@@ -30,12 +30,12 @@ const Informativo: React.FC = () => {
                   <span className="text-md opacity-70">Estado</span>
                   <span
                     className={`font-semibold ${
-                      molinoData?.EstadoMol1 === 'Corriendo'
+                      molinoData?.Variables.EstadoMol1 === 'Corriendo'
                         ? 'text-on'
                         : 'text-off'
                     }`}
                   >
-                    {molinoData?.EstadoMol1 === 'Corriendo'
+                    {molinoData?.Variables.EstadoMol1 === 'Corriendo'
                       ? 'Operando'
                       : 'Detenido'}
                   </span>
@@ -45,7 +45,7 @@ const Informativo: React.FC = () => {
               <div className="flex items-center gap-10">
                 <div>
                   <span className="text-lg opacity-70">
-                    {molinoData?.TurnoMolinos || '0'}
+                    {molinoData?.Variables.TurnoMolinos || '0'}
                   </span>
                 </div>
 
@@ -57,7 +57,7 @@ const Informativo: React.FC = () => {
                       Piezas procesadas
                     </span>
                     <span className="font-bold text-lg">
-                      {molinoData?.PiezasMol1 || '0'}
+                      {molinoData?.Variables.PiezasMol1 || '0'}
                     </span>
                   </div>
                 </div>
@@ -69,6 +69,15 @@ const Informativo: React.FC = () => {
             <div className="flex items-center gap-2 mb-2">
               <FileText className="w-7 h-7 opacity-70" />
               <h2 className="text-md font-medium">Descripción</h2>
+              <p className="text-sm">
+                {molinoData?.Informativo.odt || 'Sin descripción'}
+              </p>
+              <p className="text-sm">
+                {molinoData?.Informativo.articulo || 'Sin descripción'}
+              </p>
+              <p className="text-sm">
+                {molinoData?.Informativo.descripcion || 'Sin descripción'}
+              </p>
             </div>
           </div>
         </div>

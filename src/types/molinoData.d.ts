@@ -1,4 +1,10 @@
-type Molino1Data = {
+interface Informativo {
+  odt: string
+  articulo: string
+  descripcion: string
+}
+
+interface Variables {
   TurnoMolinos: string
   PresNitrogegoMol1: number
   RunMol1: boolean
@@ -20,6 +26,11 @@ type Molino1Data = {
   PotThermatool: number
   TempAguaDestSalPreTocco: number
   TempAguaDestSalThermatool: number
+}
+
+interface Molino1Data {
+  Informativo: Informativo
+  Variables: Variables
 }
 
 export type { Molino1Data }
