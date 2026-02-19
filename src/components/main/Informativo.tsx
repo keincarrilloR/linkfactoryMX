@@ -13,14 +13,14 @@ const Informativo: React.FC = () => {
           <div
             className={`p-4 rounded-lg transition-all 
         ${
-          molinoData?.run
+          molinoData?.estado === 'Corriendo'
             ? 'border border-on bg-on-fondo'
             : 'border border-off bg-off-fondo'
         }`}
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                {molinoData?.run ? (
+                {molinoData?.estado ? (
                   <Play className="w-7 h-7 text-on" />
                 ) : (
                   <Square className="w-7 h-7 text-off" />
@@ -29,9 +29,11 @@ const Informativo: React.FC = () => {
                 <div className="flex flex-col">
                   <span className="text-md opacity-70">Estado</span>
                   <span
-                    className={`font-semibold ${molinoData?.run ? 'text-on' : 'text-off'}`}
+                    className={`font-semibold ${molinoData?.estado === 'Corriendo' ? 'text-on' : 'text-off'}`}
                   >
-                    {molinoData?.run ? 'Operando' : 'Detenido'}
+                    {molinoData?.estado === 'Corriendo'
+                      ? 'Operando'
+                      : 'Detenido'}
                   </span>
                 </div>
               </div>
