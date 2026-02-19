@@ -29,7 +29,7 @@ const StatusCard = ({
       <div
         className={`${colors[color]} h-full flex flex-col justify-between rounded-lg flex-1 p-5 text-white shadow-lg bg-gre hover:shadow-xl transition-shadow`}
       >
-        <h3 className="text-lg uppercase tracking-wide opacity-80 mb-2">
+        <h3 className="text-lg uppercase tracking-wide opacity-80 mb-2 font-semibold">
           {title}
         </h3>
         <div className="flex items-center justify-center gap-1">
