@@ -12,7 +12,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Velocidad de Linea (Mts/min)"
-        value={molinoData?.Variables.VelLineaMol1?.toString() || '0'}
+        value={molinoData?.variables.velLineaMol1.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/b5672b592aad43c88444bda7e3ec9520?orgId=1"
         min="100"
         max="120"
@@ -23,7 +23,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Corriente Precalentador Tocco (%A)"
-        value={molinoData?.Variables.CorrToccoMol1?.toString() || '0'}
+        value={molinoData?.variables.corrToccoMol1?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/b49e48001313436583bfa1c2d651b5ea?orgId=1"
         min="100"
         max="120"
@@ -35,8 +35,8 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Corriente de Armadura Finpass (A)"
         value={
-          molinoData?.Variables.CorrFinpassMol1
-            ? (molinoData.Variables.CorrFinpassMol1 / 100).toFixed(2)
+          molinoData?.variables.corrFinpassMol1
+            ? (molinoData.variables.corrFinpassMol1 / 100).toFixed(2)
             : '0'
         }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/76046ee620514f9aa4e6008ce98c906d?orgId=1"
@@ -49,7 +49,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Voltaje Thermatool (%V)"
-        value={molinoData?.Variables.VoltThermatoolMol1?.toString() || '0'}
+        value={molinoData?.variables.voltThermatoolMol1?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/df9fef453dcd4e58aa5d7feb544bb3c8?orgId=1"
         min="100"
         max="120"
@@ -61,8 +61,8 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Corriente de Armadura Sizing (A)"
         value={
-          molinoData?.Variables.CorrArmaduraSizing
-            ? (molinoData.Variables.CorrArmaduraSizing / 100).toFixed(2)
+          molinoData?.variables.corrArmaduraSizingMol1
+            ? (molinoData.variables.corrArmaduraSizingMol1 / 100).toFixed(2)
             : '0'
         }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/56b63eb4e6724e159caaa8e84165a6ee?orgId=1"
@@ -76,8 +76,8 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Corriente de Armadura Breakdown (A)"
         value={
-          molinoData?.Variables.CorrArmaduraBreakdown
-            ? (molinoData.Variables.CorrArmaduraBreakdown / 100).toFixed(2)
+          molinoData?.variables.corrArmaduraBreakdownMol1
+            ? (molinoData.variables.corrArmaduraBreakdownMol1 / 100).toFixed(2)
             : '0'
         }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/40e69cfe1bed470383a13b4c08f0b8ab?orgId=1"
@@ -90,7 +90,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Corriente de Thermatool (%A)"
-        value={molinoData?.Variables.CorrThermatool?.toString() || '0'}
+        value={molinoData?.variables.corrThermatoolMol1?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/d480ccd85d1347b382b771290cd830a0?orgId=1"
         min="100"
         max="120"
@@ -101,7 +101,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Voltaje Precalentador Tocco (V)"
-        value={molinoData?.Variables.VoltPreTocco?.toString() || '0'}
+        value={molinoData?.variables.voltPreToccoMol1?.toString() || '0'}
         grafana="http://monitomx.rymco.io:9030/public-dashboards/66dd1e6b6e91409cb656251824e72f0a"
         min="100"
         max="120"
@@ -112,7 +112,9 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Temp agua entrada precalentador tocco (°C)"
-        value={molinoData?.Variables.TempAguaDestEntPreTocco?.toString() || '0'}
+        value={
+          molinoData?.variables.tempAguaDestSalPreToccoMol1?.toString() || '0'
+        }
         grafana="http://monitormx.rymco.io:9030/public-dashboards/b41c71f0b160419bba1d7c82dad978ca?orgId=1"
         min="100"
         max="120"
@@ -124,7 +126,7 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Temp agua entrada thermatool (°C)"
         value={Math.floor(
-          molinoData?.Variables.TempAguaDestEntThermatool || 0
+          molinoData?.variables.tempAguaDestEntThermatoolMol1 || 0
         ).toString()}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/fd7ae4e0347d4f64ad357dbf4395e6cb"
         min="100"
@@ -136,7 +138,7 @@ const Variables: React.FC = () => {
 
       <StatusCard
         title="Potencia Thermatool (kW)"
-        value={molinoData?.Variables.PotThermatool?.toString() || '0'}
+        value={molinoData?.variables.potThermatoolMol1?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/6bb14344159f45f9b1ce94d0118ffa6a"
         min="100"
         max="120"
@@ -148,7 +150,7 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Temp agua salida tocco (°C)"
         value={Math.ceil(
-          molinoData?.Variables.TempAguaDestSalPreTocco || 0
+          molinoData?.variables.tempAguaDestSalPreToccoMol1 || 0
         ).toString()}
         grafana="http://monitorm.rymco.io:9030/public-dashboards/984bc55f8705400f902abe55b2dfd81a"
         min="100"
@@ -161,7 +163,7 @@ const Variables: React.FC = () => {
       <StatusCard
         title="Temp agua salida thermatool (°C)"
         value={Math.ceil(
-          molinoData?.Variables.TempAguaDestSalThermatool || 0
+          molinoData?.variables.tempAguaDestSalThermatoolMol1 || 0
         ).toString()}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/dbe8ea3e2c6f4ad8b559c32220e0bfc9?orgId=1"
         min="100"
