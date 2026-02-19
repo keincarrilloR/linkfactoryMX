@@ -65,19 +65,32 @@ const Informativo: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-4 bg-panel rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <FileText className="w-7 h-7 opacity-70" />
-              <h2 className="text-md font-medium">Descripción</h2>
-              <p className="text-sm">
-                {molinoData?.informativo.odt || 'Sin descripción'}
-              </p>
-              <p className="text-sm">
-                {molinoData?.informativo.articulo || 'Sin descripción'}
-              </p>
-              <p className="text-sm">
-                {molinoData?.informativo.descripcion || 'Sin descripción'}
-              </p>
+          <div className="p-4 bg-panel rounded-lg text-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 opacity-70" />
+                  <p className=" font-medium">
+                    {molinoData?.informativo.odt || 'Sin descripción'}
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 opacity-70" />
+
+                  <p className="">
+                    {molinoData?.informativo.articulo || 'Sin descripción'}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <FileText className="w-5 h-5 opacity-70" />
+
+                <p className="leading-relaxed">
+                  {molinoData?.informativo.descripcion || 'Sin descripción'}
+                </p>
+              </div>
             </div>
           </div>
         </div>
