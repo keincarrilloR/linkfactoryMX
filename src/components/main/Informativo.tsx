@@ -13,14 +13,14 @@ const Informativo: React.FC = () => {
           <div
             className={`p-4 rounded-lg transition-all 
         ${
-          molinoData?.estado === 'Corriendo'
+          molinoData?.EstadoMol1 === 'Corriendo'
             ? 'border border-on bg-on-fondo'
             : 'border border-off bg-off-fondo'
         }`}
           >
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                {molinoData?.estado ? (
+                {molinoData?.EstadoMol1 === 'Corriendo' ? (
                   <Play className="w-7 h-7 text-on" />
                 ) : (
                   <Square className="w-7 h-7 text-off" />
@@ -29,18 +29,23 @@ const Informativo: React.FC = () => {
                 <div className="flex flex-col">
                   <span className="text-md opacity-70">Estado</span>
                   <span
-                    className={`font-semibold ${molinoData?.estado === 'Corriendo' ? 'text-on' : 'text-off'}`}
+                    className={`font-semibold ${
+                      molinoData?.EstadoMol1 === 'Corriendo'
+                        ? 'text-on'
+                        : 'text-off'
+                    }`}
                   >
-                    {molinoData?.estado === 'Corriendo'
+                    {molinoData?.EstadoMol1 === 'Corriendo'
                       ? 'Operando'
                       : 'Detenido'}
                   </span>
                 </div>
               </div>
+
               <div className="flex items-center gap-10">
                 <div>
                   <span className="text-lg opacity-70">
-                    {molinoData?.turno || '0'}
+                    {molinoData?.TurnoMolinos || '0'}
                   </span>
                 </div>
 
@@ -52,7 +57,7 @@ const Informativo: React.FC = () => {
                       Piezas procesadas
                     </span>
                     <span className="font-bold text-lg">
-                      {molinoData?.piezas || '0'}
+                      {molinoData?.PiezasMol1 || '0'}
                     </span>
                   </div>
                 </div>
