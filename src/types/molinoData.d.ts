@@ -1,19 +1,30 @@
-interface Informativo {
+interface EstadoYRun {
+  piezasMol1: number
+  estadoMol1: string
+  turnoMol1: string
+}
+
+interface OdtArtDesc {
   odt: string
   articulo: string
   descripcion: string
 }
 
-interface General {
-  turnoMol1: string
-  estadoMol1: string
+interface Tonelaje {
+  tont: string
+  maquina: string
+}
+
+interface Informativo {
+  estadoYRun: EstadoYRun
+  odtArtDesc: OdtArtDesc
+  tonelaje: Tonelaje
 }
 
 interface Variables {
   presNitrogenoMol1: number
   runMol1: boolean
   velLineaMol1: number
-  piezasMol1: number
   tempZincMol1: number
   flujoNitrogenoMol1: number
   tempCombustionMol1: number
@@ -32,7 +43,6 @@ interface Variables {
 }
 
 interface Molino1Data {
-  general: General
   informativo: Informativo
   variables: Variables
 }
