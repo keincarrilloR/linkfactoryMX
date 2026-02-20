@@ -43,9 +43,9 @@ const Informativo: React.FC = () => {
                 )}
 
                 <div className="flex flex-col">
-                  <span className="text-xs sm:text-md opacity-70">Estado</span>
+                  <span className="text-xs sm:text-lg opacity-70">Estado</span>
                   <span
-                    className={`text-sm sm:text-base font-semibold ${
+                    className={`text-sm sm:text-lg font-semibold ${
                       estado === 'Corriendo' ? 'text-on' : 'text-off'
                     }`}
                   >
@@ -63,10 +63,10 @@ const Informativo: React.FC = () => {
                   <Package className={classesIconsSmall} />
 
                   <div className="flex flex-col">
-                    <span className="text-xs sm:text-md opacity-70">
+                    <span className="text-xs sm:text-lg opacity-70">
                       Piezas procesadas
                     </span>
-                    <span className="font-bold text-base sm:text-lg">
+                    <span className="font-bold text-base sm:text-xl">
                       {piezas ?? 0}
                     </span>
                   </div>
@@ -84,7 +84,7 @@ const Informativo: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-2 bg-gray p-2 sm:p-3 rounded-lg">
                     <FileText className={classesIconsSmall} />
-                    <p className="text-sm sm:text-base font-medium">
+                    <p className="text-sm sm:text-lg font-medium">
                       {molinoData?.informativo?.odtArtDesc?.odt || 'Sin ODT'}
                     </p>
                   </div>
@@ -96,7 +96,7 @@ const Informativo: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-2 bg-gray p-2 sm:p-3 rounded-lg">
                     <Newspaper className={classesIconsSmall} />
-                    <p className="text-sm sm:text-base">
+                    <p className="text-sm sm:text-lg">
                       {molinoData?.informativo?.odtArtDesc?.articulo ||
                         'Sin artículo'}
                     </p>
@@ -112,7 +112,7 @@ const Informativo: React.FC = () => {
                   <ScrollText
                     className={`${classesIconsSmall} shrink-0 mt-0.5`}
                   />
-                  <p className="text-sm sm:text-base leading-relaxed">
+                  <p className="text-sm sm:text-lg leading-relaxed">
                     {molinoData?.informativo?.odtArtDesc?.descripcion ||
                       'Sin descripción'}
                   </p>
@@ -133,7 +133,7 @@ const Informativo: React.FC = () => {
             <div className="flex items-center justify-between bg-gray rounded-lg px-3 sm:px-4 py-3 sm:py-4">
               <div className="flex items-center gap-2 sm:gap-3">
                 <Weight className={classesIconsSmall} />
-                <span className="text-sm sm:text-md opacity-70">Tonelaje</span>
+                <span className="text-sm sm:text-lg opacity-70">Tonelaje</span>
               </div>
               <div className="text-right">
                 <span className="text-2xl sm:text-3xl font-bold">
@@ -148,7 +148,7 @@ const Informativo: React.FC = () => {
                 <span className="text-xs opacity-50 uppercase tracking-wide">
                   Máquina
                 </span>
-                <span className="text-xs sm:text-sm font-medium">
+                <span className="text-xs sm:text-lg font-medium">
                   {maquina}
                 </span>
               </div>
