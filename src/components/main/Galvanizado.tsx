@@ -54,28 +54,6 @@ const Galvanizado: React.FC = () => {
       >
         <PillBottle className={classesIcons} />
       </StatusCard>
-
-      <StatusCard
-        title="Velocidad (Mts/min)"
-        value={v?.velLineaMol1?.toString() || '0'}
-        grafana="http://monitormx.rymco.io:9030/public-dashboards/b5672b592aad43c88444bda7e3ec9520?orgId=1"
-        min="100"
-        max="120"
-        color="blue"
-      >
-        <Gauge className={classesIcons} />
-      </StatusCard>
-
-      <StatusCard
-        title="Corriente Tocco (A)"
-        value={v?.corrToccoMol1?.toString() || '0'}
-        grafana="http://monitormx.rymco.io:9030/public-dashboards/b49e48001313436583bfa1c2d651b5ea?orgId=1"
-        min="100"
-        max="120"
-        color="blue"
-      >
-        <PlugZap className={classesIcons} />
-      </StatusCard>
     </section>
   )
 }
