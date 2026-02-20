@@ -27,9 +27,9 @@ const StatusCard = ({
       className="hover:scale-105 transition-transform h-full block"
     >
       <div
-        className={`${colors[color]} h-full flex flex-col justify-between rounded-lg flex-1 p-5 text-white shadow-lg bg-gre hover:shadow-xl transition-shadow`}
+        className={`${colors[color]} h-full flex flex-col justify-between rounded-lg flex-1 p-5 text-white shadow-lg hover:shadow-xl transition-shadow`}
       >
-        <h3 className="text-lg uppercase tracking-wide opacity-80 mb-2 font-semibold">
+        <h3 className="text-lg uppercase tracking-wide opacity-90 mb-2 font-semibold">
           {title}
         </h3>
         <div className="flex items-center justify-center gap-1">
@@ -38,9 +38,9 @@ const StatusCard = ({
         </div>
 
         {(min || max) && (
-          <div className="flex justify-between text-lg pt-3 border-t border-white/20">
-            {min && <span className="opacity-75 ">Min: {min}</span>}
-            {max && <span className="opacity-75 ">Max: {max}</span>}
+          <div className="flex justify-between text-lg pt-3 border-t border-white/30">
+            {min && <span className="opacity-80">Min: {min}</span>}
+            {max && <span className="opacity-80">Max: {max}</span>}
           </div>
         )}
       </div>
