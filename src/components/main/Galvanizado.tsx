@@ -1,4 +1,4 @@
-import { Gauge, PillBottle, PlugZap, Thermometer, Waves } from 'lucide-react'
+import { PillBottle, Thermometer, Waves } from 'lucide-react'
 import { useSocket } from '../../hooks/useSocket'
 import StatusCard from '../cards/StatusCard'
 import { classesIcons } from '../../styles/icons'
