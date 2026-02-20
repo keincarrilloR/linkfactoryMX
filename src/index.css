@@ -2,6 +2,7 @@
 
 @theme {
   --color-white: #f8fafc; /* Blanco */
+  --color-gray: #3d475c; /* Gris para bordes y elementos secundarios */
   --color-main: #0f172a; /* Fondo principal */
   --color-panel: #1e293b; /* Tarjetas */
   --color-elevated: #273449; /* Hover / elevado */

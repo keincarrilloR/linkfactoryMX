@@ -1,5 +1,14 @@
-import { BarChart3, FileText, Package, Play, Square } from 'lucide-react'
+import {
+  BarChart3,
+  FileText,
+  Newspaper,
+  Package,
+  Play,
+  ScrollText,
+  Square
+} from 'lucide-react'
 import { useSocket } from '../../hooks/useSocket'
+import { classesIconsSmall } from '../../styles/icons'
 
 const Informativo: React.FC = () => {
   const { molinoData } = useSocket()
@@ -50,7 +59,7 @@ const Informativo: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <Package className="w-7 h-7 text-production" />
+                  <Package className={classesIconsSmall} />
 
                   <div className="flex flex-col">
                     <span className="text-md opacity-70">
@@ -66,17 +75,17 @@ const Informativo: React.FC = () => {
           </div>
 
           <div className="p-4 bg-panel rounded-lg text-lg">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-3">
-                <div className="flex items-center gap-2">
-                  <FileText className="w-5 h-5 opacity-70" />
+                <div className="flex items-center gap-2 bg-gray p-3 rounded-lg">
+                  <FileText className={classesIconsSmall} />
                   <p className=" font-medium">
                     {molinoData?.informativo.odt || 'Sin descripción'}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <FileText className="w-5 h-5 opacity-70" />
+                <div className="flex items-center gap-2 bg-gray p-3 rounded-lg">
+                  <Newspaper className={classesIconsSmall} />
 
                   <p className="">
                     {molinoData?.informativo.articulo || 'Sin descripción'}
@@ -84,8 +93,8 @@ const Informativo: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                <FileText className="w-5 h-5 opacity-70" />
+              <div className="flex items-center gap-2 bg-gray p-3 rounded-lg">
+                <ScrollText className={classesIconsSmall} />
 
                 <p className="leading-relaxed">
                   {molinoData?.informativo.descripcion || 'Sin descripción'}
