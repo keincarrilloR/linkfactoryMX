@@ -45,7 +45,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
       setIsConnected(false)
 
       setTimeout(() => {
-        console.log('Reintentando conexión...')
+        console.log('Reintentando conexion...')
         window.location.reload()
       }, 10000)
     }

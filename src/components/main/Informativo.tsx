@@ -122,7 +122,6 @@ const Informativo: React.FC = () => {
           </div>
         </div>
 
-        {/* Producción */}
         <div className="p-3 sm:p-4 bg-panel rounded-lg flex flex-col gap-4">
           <div className="flex items-center gap-2">
             <BarChart3 className={classesIconsSmall} />
