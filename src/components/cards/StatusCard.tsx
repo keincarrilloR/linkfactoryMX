@@ -5,7 +5,7 @@ type CardProps = {
   value: string
   min?: string
   max?: string
-  color?: 'green' | 'orange' | 'blue'
+  color?: 'green' | 'orange' | 'red' | 'purple' | 'stop' | 'black'
   grafana?: string
   children?: React.ReactNode
 }
