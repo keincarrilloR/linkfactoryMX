@@ -3,12 +3,12 @@ import { useSocket } from '../../hooks/useSocket'
 import StatusCard from '../cards/StatusCard'
 import { classesIcons } from '../../styles/icons'
 import type { Valores } from '../../types/molinoData'
+import { getColor } from '../../utils/getColor'
 
 const Galvanizado: React.FC = () => {
   const { molinoData } = useSocket()
   const v = molinoData?.variables
 
-  // 🔹 Igual que en el otro componente
   const getMin = (val?: Valores) =>
     val?.maxMinNom?.dbp_valmin?.toString() || '0'
 
@@ -25,7 +25,11 @@ const Galvanizado: React.FC = () => {
         grafana="http://monitormx.rymco.io:9030/public-dashboards/c5aa64528cc84133952af166eec3aadd?orgId=1"
         min={getMin(v?.tempZincMol1)}
         max={getMax(v?.tempZincMol1)}
-        color="orange"
+        color={getColor(
+          parseInt(getMin(v?.tempZincMol1)) || 0,
+          parseInt(getMax(v?.tempZincMol1)) || 0,
+          v?.tempZincMol1?.actual || 0
+        )}
       >
         <Thermometer className={classesIcons} />
       </StatusCard>
@@ -36,7 +40,11 @@ const Galvanizado: React.FC = () => {
         grafana="http://monitormx.rymco.io:9030/public-dashboards/08c6333289bb49d488bf9f431a344dd8?orgId=1"
         min={getMin(v?.tempCombustionMol1)}
         max={getMax(v?.tempCombustionMol1)}
-        color="orange"
+        color={getColor(
+          parseInt(getMin(v?.tempCombustionMol1)) || 0,
+          parseInt(getMax(v?.tempCombustionMol1)) || 0,
+          v?.tempCombustionMol1?.actual || 0
+        )}
       >
         <Thermometer className={classesIcons} />
       </StatusCard>
@@ -47,7 +55,11 @@ const Galvanizado: React.FC = () => {
         grafana="http://monitormx.rymco.io:9030/public-dashboards/4b3f3ed8aeba4e6cb15413b034538459?orgId=1"
         min={getMin(v?.flujoNitrogenoMol1)}
         max={getMax(v?.flujoNitrogenoMol1)}
-        color="blue"
+        color={getColor(
+          parseInt(getMin(v?.flujoNitrogenoMol1)) || 0,
+          parseInt(getMax(v?.flujoNitrogenoMol1)) || 0,
+          v?.flujoNitrogenoMol1?.actual || 0
+        )}
       >
         <Waves className={classesIcons} />
       </StatusCard>
@@ -58,7 +70,11 @@ const Galvanizado: React.FC = () => {
         grafana="http://monitormx.rymco.io:9030/public-dashboards/a3cf2cf69c024e399bbfcf2f1dc424d3?orgId=1"
         min={getMin(v?.presNitrogenoMol1)}
         max={getMax(v?.presNitrogenoMol1)}
-        color="blue"
+        color={getColor(
+          parseInt(getMin(v?.presNitrogenoMol1)) || 0,
+          parseInt(getMax(v?.presNitrogenoMol1)) || 0,
+          v?.presNitrogenoMol1?.actual || 0
+        )}
       >
         <PillBottle className={classesIcons} />
       </StatusCard>

@@ -96,7 +96,7 @@ const Informativo: React.FC = () => {
                   </span>
                   <div className="flex items-center gap-2 bg-gray p-2 sm:p-3 rounded-lg">
                     <Newspaper className={classesIconsSmall} />
-                    <p className="text-sm sm:text-lg">
+                    <p className="text-sm sm:text-lg font-medium">
                       {molinoData?.informativo?.odtArtDesc?.articulo ||
                         'Sin artículo'}
                     </p>
@@ -112,7 +112,7 @@ const Informativo: React.FC = () => {
                   <ScrollText
                     className={`${classesIconsSmall} shrink-0 mt-0.5`}
                   />
-                  <p className="text-sm sm:text-lg leading-relaxed">
+                  <p className="text-sm sm:text-lg font-medium">
                     {molinoData?.informativo?.odtArtDesc?.descripcion ||
                       'Sin descripción'}
                   </p>
