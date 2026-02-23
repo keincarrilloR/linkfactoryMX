@@ -1,7 +1,17 @@
-interface Valores {
-  max: number
+interface MaxMinNom {
+  ma_desmac: string
+  MolSuc: string
+  dbp_device: string
+  ar_codice: string
+  ma_codice: string
+  dbp_valmin: number
+  dbp_valnom: number
+  dbp_valmax: number
+}
+
+export interface Valores {
   actual: number
-  min: number
+  maxMinNom: MaxMinNom
 }
 
 interface EstadoYRun {
