@@ -14,12 +14,12 @@ import { classesIconsSmall } from '../../styles/icons'
 import colors from '../../styles/colors'
 
 const colorItems = [
-  { label: 'Operando normal', classes: colors.green },
-  { label: 'Advertencia', classes: colors.orange },
-  { label: 'Alarma crítica', classes: colors.red },
-  { label: 'Mantenimiento', classes: colors.purple },
+  { label: 'Activo', classes: colors.green },
+  { label: 'Preventivo MAX. MIN.', classes: colors.orange },
+  { label: 'Fuera de rango MAX. MIN.', classes: colors.red },
+  { label: 'Sin MAX. MIN.', classes: colors.purple },
   { label: 'Detenido', classes: colors.stop },
-  { label: 'Sin señal', classes: colors.black }
+  { label: 'Sin conexión', classes: colors.black }
 ]
 
 const Informativo: React.FC = () => {

@@ -3,6 +3,7 @@ export const getColor = (min: number, max: number, value: number) => {
   // Detenido
   if (String(value) === '0') return 'stop'
 
+  if (min === 0 && max === 0) return 'purple' // Sin rango
   // Preventivo
   if (max - max * 0.35 > value) return 'orange' // Bajo
   if (min + min * 0.35 < value) return 'orange' // Alto
