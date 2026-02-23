@@ -12,9 +12,9 @@ type CardProps = {
 
 const StatusCard = ({
   title,
-  value,
-  min,
-  max,
+  value = '0',
+  min = '0',
+  max = '0',
   color = 'green',
   grafana,
   children

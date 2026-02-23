@@ -13,10 +13,10 @@ const Galvanizado: React.FC = () => {
 
       <StatusCard
         title="Temperatura Horno Zinc (°C)"
-        value={v?.tempZincMol1?.toString() || '0'}
+        value={v?.tempZincMol1?.actual.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/c5aa64528cc84133952af166eec3aadd?orgId=1"
-        min="453"
-        max="482"
+        min={v?.tempZincMol1.min.toString()}
+        max={v?.tempZincMol1.max.toString()}
         color="orange"
       >
         <Thermometer className={classesIcons} />
@@ -24,10 +24,10 @@ const Galvanizado: React.FC = () => {
 
       <StatusCard
         title="Temperatura Combustión (°C)"
-        value={v?.tempCombustionMol1?.toString() || '0'}
+        value={v?.tempCombustionMol1?.actual?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/08c6333289bb49d488bf9f431a344dd8?orgId=1"
-        min="450"
-        max="520"
+        min={v?.tempCombustionMol1?.min.toString()}
+        max={v?.tempCombustionMol1?.max.toString()}
         color="orange"
       >
         <Thermometer className={classesIcons} />
@@ -35,10 +35,10 @@ const Galvanizado: React.FC = () => {
 
       <StatusCard
         title="Flujo Nitrógeno (L/min)"
-        value={v?.flujoNitrogenoMol1?.toString() || '0'}
+        value={v?.flujoNitrogenoMol1?.actual?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/4b3f3ed8aeba4e6cb15413b034538459?orgId=1"
-        min="100"
-        max="120"
+        min={v?.flujoNitrogenoMol1?.min?.toString()}
+        max={v?.flujoNitrogenoMol1?.max?.toString()}
         color="blue"
       >
         <Waves className={classesIcons} />
@@ -46,10 +46,10 @@ const Galvanizado: React.FC = () => {
 
       <StatusCard
         title="Presión Nitrógeno (PSI)"
-        value={v?.presNitrogenoMol1?.toString() || '0'}
+        value={v?.presNitrogenoMol1?.actual?.toString() || '0'}
         grafana="http://monitormx.rymco.io:9030/public-dashboards/a3cf2cf69c024e399bbfcf2f1dc424d3?orgId=1"
-        min="100"
-        max="120"
+        min={v?.presNitrogenoMol1?.min?.toString()}
+        max={v?.presNitrogenoMol1?.max?.toString()}
         color="blue"
       >
         <PillBottle className={classesIcons} />

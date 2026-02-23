@@ -1,3 +1,9 @@
+interface Valores {
+  max: number
+  actual: number
+  min: number
+}
+
 interface EstadoYRun {
   piezasMol1: number
   estadoMol1: string
@@ -22,24 +28,23 @@ interface Informativo {
 }
 
 interface Variables {
-  presNitrogenoMol1: number
-  runMol1: boolean
-  velLineaMol1: number
-  tempZincMol1: number
-  flujoNitrogenoMol1: number
-  tempCombustionMol1: number
-  corrToccoMol1: number
-  corrFinpassMol1: number
-  voltThermatoolMol1: number
-  corrArmaduraSizingMol1: number
-  corrArmaduraBreakdownMol1: number
-  corrThermatoolMol1: number
-  voltPreToccoMol1: number
-  tempAguaDestEntPreToccoMol1: number
-  tempAguaDestEntThermatoolMol1: number
-  potThermatoolMol1: number
-  tempAguaDestSalPreToccoMol1: number
-  tempAguaDestSalThermatoolMol1: number
+  presNitrogenoMol1: Valores
+  velLineaMol1: Valores
+  tempZincMol1: Valores
+  flujoNitrogenoMol1: Valores
+  tempCombustionMol1: Valores
+  corrToccoMol1: Valores
+  corrFinpassMol1: Valores
+  voltThermatoolMol1: Valores
+  corrArmaduraSizingMol1: Valores
+  corrArmaduraBreakdownMol1: Valores
+  corrThermatoolMol1: Valores
+  voltPreToccoMol1: Valores
+  tempAguaDestEntPreToccoMol1: Valores
+  tempAguaDestEntThermatoolMol1: Valores
+  potThermatoolMol1: Valores
+  tempAguaDestSalPreToccoMol1: Valores
+  tempAguaDestSalThermatoolMol1: Valores
 }
 
 interface Molino1Data {
