@@ -24,6 +24,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.velLineaMol1) || 0,
             getMax(v?.velLineaMol1) || 0,
+            v?.velLineaMol1?.maxMinNom?.dbp_valnom || 0,
             v?.velLineaMol1?.actual || 0
           )}
         >
@@ -39,6 +40,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.corrToccoMol1) || 0,
             getMax(v?.corrToccoMol1) || 0,
+            v?.corrToccoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.corrToccoMol1?.actual || 0
           )}
         >
@@ -58,6 +60,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.corrFinpassMol1) || 0,
             getMax(v?.corrFinpassMol1) || 0,
+            v?.corrFinpassMol1?.maxMinNom?.dbp_valnom || 0,
             v?.corrFinpassMol1?.actual || 0
           )}
         >
@@ -73,6 +76,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.voltThermatoolMol1) || 0,
             getMax(v?.voltThermatoolMol1) || 0,
+            v?.voltThermatoolMol1?.maxMinNom?.dbp_valnom || 0,
             v?.voltThermatoolMol1?.actual || 0
           )}
         >
@@ -92,6 +96,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.corrArmaduraSizingMol1) || 0,
             getMax(v?.corrArmaduraSizingMol1) || 0,
+            v?.corrArmaduraSizingMol1?.maxMinNom?.dbp_valnom || 0,
             v?.corrArmaduraSizingMol1?.actual || 0
           )}
         >
@@ -111,6 +116,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.corrArmaduraBreakdownMol1) || 0,
             getMax(v?.corrArmaduraBreakdownMol1) || 0,
+            v?.corrArmaduraBreakdownMol1?.maxMinNom?.dbp_valnom || 0,
             v?.corrArmaduraBreakdownMol1?.actual || 0
           )}
         >
@@ -130,6 +136,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.corrThermatoolMol1) || 0,
             getMax(v?.corrThermatoolMol1) || 0,
+            v?.corrThermatoolMol1?.maxMinNom?.dbp_valnom || 0,
             v?.corrThermatoolMol1?.actual || 0
           )}
         >
@@ -145,6 +152,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.voltPreToccoMol1) || 0,
             getMax(v?.voltPreToccoMol1) || 0,
+            v?.voltPreToccoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.voltPreToccoMol1?.actual || 0
           )}
         >
@@ -160,6 +168,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.tempAguaDestEntPreToccoMol1) || 0,
             getMax(v?.tempAguaDestEntPreToccoMol1) || 0,
+            v?.tempAguaDestEntPreToccoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.tempAguaDestEntPreToccoMol1?.actual || 0
           )}
         >
@@ -172,7 +181,12 @@ const Variables: React.FC = () => {
           grafana="http://monitormx.rymco.io:9030/public-dashboards/fd7ae4e0347d4f64ad357dbf4395e6cb"
           min={getMin(v?.tempAguaDestEntThermatoolMol1)}
           max={getMax(v?.tempAguaDestEntThermatoolMol1)}
-          color="green"
+          color={getColor(
+            getMin(v?.tempAguaDestEntThermatoolMol1) || 0,
+            getMax(v?.tempAguaDestEntThermatoolMol1) || 0,
+            v?.tempAguaDestEntThermatoolMol1?.maxMinNom?.dbp_valnom || 0,
+            v?.tempAguaDestEntThermatoolMol1?.actual || 0
+          )}
         >
           <Droplet className={classesIcons} />
         </StatusCard>
@@ -186,6 +200,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.potThermatoolMol1) || 0,
             getMax(v?.potThermatoolMol1) || 0,
+            v?.potThermatoolMol1?.maxMinNom?.dbp_valnom || 0,
             v?.potThermatoolMol1?.actual || 0
           )}
         >
@@ -201,6 +216,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.tempAguaDestSalPreToccoMol1) || 0,
             getMax(v?.tempAguaDestSalPreToccoMol1) || 0,
+            v?.tempAguaDestSalPreToccoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.tempAguaDestSalPreToccoMol1?.actual || 0
           )}
         >
@@ -216,6 +232,7 @@ const Variables: React.FC = () => {
           color={getColor(
             getMin(v?.tempAguaDestSalThermatoolMol1) || 0,
             getMax(v?.tempAguaDestSalThermatoolMol1) || 0,
+            v?.tempAguaDestSalThermatoolMol1?.maxMinNom?.dbp_valnom || 0,
             v?.tempAguaDestSalThermatoolMol1?.actual || 0
           )}
         >

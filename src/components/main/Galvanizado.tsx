@@ -26,6 +26,7 @@ const Galvanizado: React.FC = () => {
           color={getColor(
             getMin(v?.tempZincMol1) || 0,
             getMax(v?.tempZincMol1) || 0,
+            v?.tempZincMol1?.maxMinNom?.dbp_valnom || 0,
             v?.tempZincMol1?.actual || 0
           )}
         >
@@ -41,6 +42,7 @@ const Galvanizado: React.FC = () => {
           color={getColor(
             getMin(v?.tempCombustionMol1) || 0,
             getMax(v?.tempCombustionMol1) || 0,
+            v?.tempCombustionMol1?.maxMinNom?.dbp_valnom || 0,
             v?.tempCombustionMol1?.actual || 0
           )}
         >
@@ -56,6 +58,7 @@ const Galvanizado: React.FC = () => {
           color={getColor(
             getMin(v?.flujoNitrogenoMol1) || 0,
             getMax(v?.flujoNitrogenoMol1) || 0,
+            v?.flujoNitrogenoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.flujoNitrogenoMol1?.actual || 0
           )}
         >
@@ -71,6 +74,7 @@ const Galvanizado: React.FC = () => {
           color={getColor(
             getMin(v?.presNitrogenoMol1) || 0,
             getMax(v?.presNitrogenoMol1) || 0,
+            v?.presNitrogenoMol1?.maxMinNom?.dbp_valnom || 0,
             v?.presNitrogenoMol1?.actual || 0
           )}
         >

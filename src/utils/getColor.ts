@@ -1,17 +1,27 @@
-export const getColor = (min: number, max: number, value: number) => {
-  if (isNaN(value) || isNaN(min) || isNaN(max)) return 'black'
+const medias = (max: number, min: number, nom: number) => {
+  const mediaInferior = (min + nom) / 2
+  const mediaSuperior = (max + nom) / 2
+  return { mediaInferior, mediaSuperior }
+}
 
-  if (min === 0 && max === 0) return 'purple'
+export const getColor = (
+  min: number,
+  max: number,
+  nom: number,
+  value: number
+) => {
+  const { mediaInferior, mediaSuperior } = medias(max, min, nom)
+
+  if (isNaN(value) || isNaN(min) || isNaN(max)) return 'black'
 
   if (value === 0) return 'stop'
 
-  const realMin = Math.min(min, max)
-  const realMax = Math.max(min, max)
+  if (min === 0 && max === 0) return 'purple'
 
-  const range = (realMax - realMin) * 0.08
-  if (value <= realMin + range || value >= realMax - range) return 'orange'
+  if (value < mediaInferior) return 'orange'
+  if (value > mediaSuperior) return 'orange'
 
-  if (value < realMin || value > realMax) return 'red'
+  if (value < min || value > max) return 'red'
 
   return 'green'
 }

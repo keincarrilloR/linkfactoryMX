@@ -1,5 +1,4 @@
 import { BarChart3 } from 'lucide-react'
-import { useSocket } from '../../hooks/useSocket'
 import { classesIconsSmall } from '../../styles/icons'
 
 import Title from '../Title'
