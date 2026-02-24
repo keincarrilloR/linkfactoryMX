@@ -1,14 +1,17 @@
 export const getColor = (min: number, max: number, value: number) => {
   if (isNaN(value) || isNaN(min) || isNaN(max)) return 'black'
 
-  if (value === 0) return 'stop'
-
   if (min === 0 && max === 0) return 'purple'
 
-  const range = (max - min) * 0.08
-  if (value <= min + range || value >= max - range) return 'orange'
+  if (value === 0) return 'stop'
 
-  if (value < min || value > max) return 'red'
+  const realMin = Math.min(min, max)
+  const realMax = Math.max(min, max)
+
+  const range = (realMax - realMin) * 0.08
+  if (value <= realMin + range || value >= realMax - range) return 'orange'
+
+  if (value < realMin || value > realMax) return 'red'
 
   return 'green'
 }
