@@ -1,3 +1,7 @@
+import { useSocket } from '../hooks/useSocket'
+
+const { molinoData } = useSocket()
+
 const medias = (max: number, min: number, nom: number) => {
   const mediaInferior = (min + nom) / 2
   const mediaSuperior = (max + nom) / 2
@@ -11,8 +15,10 @@ export const getColor = (
   value: number
 ) => {
   const { mediaInferior, mediaSuperior } = medias(max, min, nom)
-
   if (isNaN(value) || isNaN(min) || isNaN(max)) return 'black'
+
+  if (molinoData?.informativo?.estadoYRun?.estadoMol1 !== 'Corriendo')
+    return 'stop'
 
   if (value === 0) return 'stop'
 
