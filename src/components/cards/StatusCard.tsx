@@ -1,10 +1,10 @@
 import colors from '../../styles/colors'
 
-type CardProps = {
+type Props = {
   title: string
-  value: string
-  min?: string
-  max?: string
+  value: number
+  min?: number
+  max?: number
   color?: 'green' | 'orange' | 'red' | 'purple' | 'stop' | 'black'
   grafana?: string
   children?: React.ReactNode
@@ -12,13 +12,13 @@ type CardProps = {
 
 const StatusCard = ({
   title,
-  value = '0',
-  min = '0',
-  max = '0',
+  value = 0,
+  min = 0,
+  max = 0,
   color = 'green',
   grafana,
   children
-}: CardProps) => {
+}: Props) => {
   return (
     <a
       href={grafana}
@@ -37,12 +37,10 @@ const StatusCard = ({
           <p className="text-4xl font-bold mb-3">{value}</p>
         </div>
 
-        {(min || max) && (
-          <div className="flex justify-between text-lg pt-3 border-t border-white/30">
-            {min && <span className="opacity-80">Min: {min}</span>}
-            {max && <span className="opacity-80">Max: {max}</span>}
-          </div>
-        )}
+        <div className="flex justify-between text-lg pt-3 border-t border-white/30">
+          <span className="opacity-80">Min: {min}</span>
+          <span className="opacity-80">Max: {max}</span>
+        </div>
       </div>
     </a>
   )
