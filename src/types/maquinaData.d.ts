@@ -15,9 +15,9 @@ export interface Valores {
 }
 
 interface EstadoYRun {
-  piezasMol1: number
-  estadoMol1: string
-  turnoMol1: string
+  piezas: number
+  estado: string
+  turno: string
 }
 
 interface OdtArtDesc {
@@ -38,23 +38,30 @@ interface Informativo {
 }
 
 interface Variables {
-  presNitrogenoMol1: Valores
-  velLineaMol1: Valores
-  tempZincMol1: Valores
-  flujoNitrogenoMol1: Valores
-  tempCombustionMol1: Valores
-  corrToccoMol1: Valores
-  corrFinpassMol1: Valores
-  voltThermatoolMol1: Valores
-  corrArmaduraSizingMol1: Valores
-  corrArmaduraBreakdownMol1: Valores
-  corrThermatoolMol1: Valores
-  voltPreToccoMol1: Valores
-  tempAguaDestEntPreToccoMol1: Valores
-  tempAguaDestEntThermatoolMol1: Valores
-  potThermatoolMol1: Valores
-  tempAguaDestSalPreToccoMol1: Valores
-  tempAguaDestSalThermatoolMol1: Valores
+  // Molino 1
+  presNitrogeno?: Valores
+  tempZinc?: Valores
+  flujoNitrogeno?: Valores
+  tempCombustion?: Valores
+  corrTocco?: Valores
+  corrFinpass?: Valores
+  voltPreTocco?: Valores
+  corrArmaduraSizing?: Valores
+  corrArmaduraBreakdown?: Valores
+  tempAguaDestEntPreTocco?: Valores
+  tempAguaDestSalPreTocco?: Valores
+
+  // Molino 2
+  corrArmaduraFormador?: Valores
+  corrArmaduraCalibrador?: Valores
+
+  // Compartidas (Mol1 + Mol2)
+  velLinea?: Valores
+  voltThermatool?: Valores
+  corrThermatool?: Valores
+  tempAguaDestEntThermatool?: Valores
+  tempAguaDestSalThermatool?: Valores
+  potThermatool?: Valores
 }
 
 interface MaquinaData {
