@@ -7,4 +7,13 @@ const colors = {
   black: 'bg-black border-gray-800'
 }
 
-export default colors
+const colorItems = [
+  { label: 'Activo', classes: colors.green },
+  { label: 'Preventivo MAX. MIN.', classes: colors.orange },
+  { label: 'Fuera de rango MAX. MIN.', classes: colors.red },
+  { label: 'Sin MAX. MIN.', classes: colors.purple },
+  { label: 'Detenido', classes: colors.stop },
+  { label: 'Sin conexión', classes: colors.black }
+]
+
+export { colors, colorItems }
