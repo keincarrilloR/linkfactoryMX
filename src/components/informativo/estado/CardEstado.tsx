@@ -13,11 +13,7 @@ const CardEstado = () => {
   return (
     <div
       className={`p-3 sm:p-4 rounded-lg transition-all 
-              ${
-                estado === 'Corriendo'
-                  ? 'border border-on bg-on-fondo'
-                  : 'border border-off bg-off-fondo'
-              }`}
+              ${estado === 'Corriendo' ? ' bg-on-fondo' : ' bg-off-fondo'}`}
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
         <Estado estado={estado} maquina={maquina} />
