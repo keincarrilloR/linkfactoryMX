@@ -16,10 +16,14 @@ const getColor = (
   if (estado === 'Detenido' || value === 0) return 'stop'
   if (min === 0 && max === 0) return 'purple'
 
-  if (value < min || value > max) return 'red'
-
   const { mediaInferior, mediaSuperior } = medias(max, min, nom)
-  if (value < mediaInferior || value > mediaSuperior) return 'orange'
+  if (
+    (value < mediaInferior && value > min) ||
+    (value > mediaSuperior && value < max)
+  )
+    return 'orange'
+
+  if (value < min || value > max) return 'red'
 
   return 'green'
 }

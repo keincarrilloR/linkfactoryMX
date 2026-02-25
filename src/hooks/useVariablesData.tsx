@@ -66,7 +66,9 @@ export const useVariablesData = (): VariableData[] => {
         getMin(v?.corrFinpassMol1),
         getMax(v?.corrFinpassMol1),
         v?.corrFinpassMol1?.maxMinNom?.dbp_valnom || 0,
-        v?.corrFinpassMol1?.actual || 0,
+        v?.corrFinpassMol1?.actual
+          ? Number((v?.corrFinpassMol1?.actual / 100).toFixed(2))
+          : 0,
         estado
       ),
       icon: <PlugZap className={classesIcons} />
@@ -100,7 +102,9 @@ export const useVariablesData = (): VariableData[] => {
         getMin(v?.corrArmaduraSizingMol1),
         getMax(v?.corrArmaduraSizingMol1),
         v?.corrArmaduraSizingMol1?.maxMinNom?.dbp_valnom || 0,
-        v?.corrArmaduraSizingMol1?.actual || 0,
+        v?.corrArmaduraSizingMol1?.actual
+          ? Number((v.corrArmaduraSizingMol1.actual / 100).toFixed(2))
+          : 0,
         estado
       ),
       icon: <PlugZap className={classesIcons} />
@@ -118,7 +122,9 @@ export const useVariablesData = (): VariableData[] => {
         getMin(v?.corrArmaduraBreakdownMol1),
         getMax(v?.corrArmaduraBreakdownMol1),
         v?.corrArmaduraBreakdownMol1?.maxMinNom?.dbp_valnom || 0,
-        v?.corrArmaduraBreakdownMol1?.actual || 0,
+        v?.corrArmaduraBreakdownMol1?.actual
+          ? Number((v.corrArmaduraBreakdownMol1.actual / 100).toFixed(2))
+          : 0,
         estado
       ),
       icon: <PlugZap className={classesIcons} />
