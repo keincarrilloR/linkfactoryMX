@@ -2,13 +2,18 @@ import { useSocket } from '../../../hooks/useSocket'
 import Estado from './Estado'
 import PiezasTurno from './PiezasTurno'
 
-const CardEstado = () => {
-  const { molinoData } = useSocket()
+interface Props {
+  maquinaId: string
+}
 
-  const estado = molinoData?.informativo?.estadoYRun?.estadoMol1
-  const turno = molinoData?.informativo?.estadoYRun?.turnoMol1
-  const piezas = molinoData?.informativo?.estadoYRun?.piezasMol1
-  const maquina = molinoData?.informativo?.tonelaje?.maquina
+const CardEstado = ({ maquinaId }: Props) => {
+  const { getMaquina } = useSocket()
+  const data = getMaquina(maquinaId)
+
+  const estado = data?.informativo?.estadoYRun?.estadoMol1
+  const turno = data?.informativo?.estadoYRun?.turnoMol1
+  const piezas = data?.informativo?.estadoYRun?.piezasMol1
+  const maquina = data?.informativo?.tonelaje?.maquina
 
   return (
     <div

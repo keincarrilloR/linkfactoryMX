@@ -2,10 +2,15 @@ import { BarChart3, Weight } from 'lucide-react'
 import { classesIconsSmall } from '../../../styles/icons'
 import { useSocket } from '../../../hooks/useSocket'
 
-const Tonelaje = () => {
-  const { molinoData } = useSocket()
+interface Props {
+  maquinaId: string
+}
 
-  const ton = molinoData?.informativo?.tonelaje?.tont ?? 0
+const Tonelaje = ({ maquinaId }: Props) => {
+  const { getMaquina } = useSocket()
+  const data = getMaquina(maquinaId)
+
+  const ton = data?.informativo?.tonelaje?.tont ?? 0
 
   return (
     <>

@@ -2,8 +2,12 @@ import StatusCard from '../cards/StatusCard'
 import Title from '../Title'
 import { useGalvanizadoData } from '../../hooks/useGalvanizadoData'
 
-const Galvanizado: React.FC = () => {
-  const galvanizadoData = useGalvanizadoData()
+interface Props {
+  maquinaId: string
+}
+
+const Galvanizado = ({ maquinaId }: Props) => {
+  const galvanizadoData = useGalvanizadoData(maquinaId)
 
   return (
     <>

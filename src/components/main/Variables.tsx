@@ -2,8 +2,12 @@ import StatusCard from '../cards/StatusCard'
 import Title from '../Title'
 import { useVariablesData } from '../../hooks/useVariablesData'
 
-const Variables: React.FC = () => {
-  const variablesData = useVariablesData()
+interface Props {
+  maquinaId: string
+}
+
+const Variables = ({ maquinaId }: Props) => {
+  const variablesData = useVariablesData(maquinaId)
 
   return (
     <>

@@ -3,12 +3,17 @@ import { useSocket } from '../../../hooks/useSocket'
 import Item from './Item'
 import { classesIconsSmall } from '../../../styles/icons'
 
-const OdtArtDes = () => {
-  const { molinoData } = useSocket()
+interface Props {
+  maquinaId: string
+}
 
-  const articulo = molinoData?.informativo?.odtArtDesc?.articulo
-  const odt = molinoData?.informativo?.odtArtDesc?.odt
-  const descripcion = molinoData?.informativo?.odtArtDesc?.descripcion
+const OdtArtDes = ({ maquinaId }: Props) => {
+  const { getMaquina } = useSocket()
+  const data = getMaquina(maquinaId)
+
+  const articulo = data?.informativo?.odtArtDesc?.articulo
+  const odt = data?.informativo?.odtArtDesc?.odt
+  const descripcion = data?.informativo?.odtArtDesc?.descripcion
 
   return (
     <div className="p-3 sm:p-4 bg-panel rounded-lg">
