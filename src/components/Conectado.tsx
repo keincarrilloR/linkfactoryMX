@@ -1,5 +1,5 @@
 import { CircleCheck, CircleX } from 'lucide-react'
-import { useSocket } from '../../hooks/useSocket'
+import { useSocket } from '../hooks/useSocket'
 
 const Conectado = () => {
   const { isConnected } = useSocket()
