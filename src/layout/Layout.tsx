@@ -1,14 +1,6 @@
 import Clock from '../components/Clock'
-import colors from '../styles/colors'
-
-const colorItems = [
-  { label: 'Activo', classes: colors.green },
-  { label: 'Preventivo MAX. MIN.', classes: colors.orange },
-  { label: 'Fuera de rango MAX. MIN.', classes: colors.red },
-  { label: 'Sin MAX. MIN.', classes: colors.purple },
-  { label: 'Detenido', classes: colors.stop },
-  { label: 'Sin conexión', classes: colors.black }
-]
+import CodigoColores from '../components/CodigoColores'
+import Conectado from '../components/main/Conectado'
 
 interface Props {
   children?: React.ReactNode
@@ -30,22 +22,9 @@ const DashboardLayout = ({ children }: Props) => {
         {children}
       </main>
 
-      <footer className="border-t border-border px-4 sm:px-6 py-3">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <span className="text-xs opacity-40 uppercase tracking-widest shrink-0">
-            Código de colores
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {colorItems.map(({ label, classes }) => (
-              <div
-                key={label}
-                className={`border rounded-md px-2.5 py-1 ${classes}`}
-              >
-                <span className="text-xs font-medium text-white">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <footer className="flex justify-between border-t border-border px-4 sm:px-6 py-3">
+        <CodigoColores />
+        <Conectado />
       </footer>
     </div>
   )
