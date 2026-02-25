@@ -5,7 +5,7 @@ import {
   useRef,
   type ReactNode
 } from 'react'
-import type { Molino1Data, SocketContextType } from '../types'
+import type { MaquinaData, SocketContextType } from '../types'
 
 export const SocketContext = createContext<SocketContextType | undefined>(
   undefined
@@ -16,7 +16,7 @@ type SocketProviderProps = {
 }
 
 export const SocketProvider = ({ children }: SocketProviderProps) => {
-  const [molinoData, setMolinoData] = useState<Molino1Data | null>(null)
+  const [maquinaData, setMaquinaData] = useState<MaquinaData | null>(null)
   const [isConnected, setIsConnected] = useState(false)
 
   const socketRef = useRef<WebSocket | null>(null)
@@ -34,7 +34,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
       try {
         const data = JSON.parse(event.data)
         if (data?.mx001) {
-          setMolinoData(data.mx001)
+          setMaquinaData(data.mx001)
         }
       } catch (error) {
         console.error(error)
@@ -55,7 +55,7 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
   }, [])
 
   return (
-    <SocketContext.Provider value={{ molinoData, isConnected }}>
+    <SocketContext.Provider value={{ maquinaData, isConnected }}>
       {children}
     </SocketContext.Provider>
   )

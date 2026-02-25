@@ -1,2 +1,2 @@
-export { Molino1Data } from './molinoData'
+export { MaquinaData } from './maquinaData'
 export { SocketContextType } from './socketContext'

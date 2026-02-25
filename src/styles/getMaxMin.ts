@@ -1,4 +1,4 @@
-import type { Valores } from '../types/molinoData'
+import type { Valores } from '../types/maquinaData'
 
 const getMin = (val?: Valores) => Number(val?.maxMinNom?.dbp_valmin ?? 0)
 

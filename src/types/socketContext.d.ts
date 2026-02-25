@@ -1,7 +1,7 @@
-import { Molino1Data } from './molinoData'
+import { MaquinaData } from './maquinaData'
 
 type SocketContextType = {
-  molinoData: Molino1Data | null
+  maquinaData: MaquinaData | null
   isConnected: boolean
 }
 

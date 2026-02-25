@@ -16,9 +16,9 @@ interface VariableData {
 }
 
 export const useVariablesData = (): VariableData[] => {
-  const { molinoData } = useSocket()
-  const v = molinoData?.variables
-  const estado = molinoData?.informativo?.estadoYRun?.estadoMol1
+  const { maquinaData } = useSocket()
+  const v = maquinaData?.variables
+  const estado = maquinaData?.informativo?.estadoYRun?.estadoMol1
 
   return [
     {

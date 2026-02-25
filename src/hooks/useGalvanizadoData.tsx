@@ -16,8 +16,8 @@ interface GalvanizadoData {
 }
 
 export const useGalvanizadoData = (): GalvanizadoData[] => {
-  const { molinoData } = useSocket()
-  const v = molinoData?.variables
+  const { maquinaData } = useSocket()
+  const v = maquinaData?.variables
 
   return [
     {

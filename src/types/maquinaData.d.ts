@@ -57,9 +57,9 @@ interface Variables {
   tempAguaDestSalThermatoolMol1: Valores
 }
 
-interface Molino1Data {
+interface MaquinaData {
   informativo: Informativo
   variables: Variables
 }
 
-export type { Molino1Data }
+export type { MaquinaData }
