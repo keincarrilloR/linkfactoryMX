@@ -1,6 +1,6 @@
 import Clock from '../components/Clock'
 import CodigoColores from '../components/CodigoColores'
-import Conectado from '../components/main/Conectado'
+import Conectado from '../components/Conectado'
 
 interface Props {
   children?: React.ReactNode

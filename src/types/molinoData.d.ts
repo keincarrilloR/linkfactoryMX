@@ -27,7 +27,7 @@ interface OdtArtDesc {
 }
 
 interface Tonelaje {
-  tont: string
+  tont: number
   maquina: string
 }
 

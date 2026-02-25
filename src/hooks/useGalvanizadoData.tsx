@@ -1,7 +1,7 @@
 import { PillBottle, Thermometer, Waves } from 'lucide-react'
 import { useSocket } from './useSocket'
 import { classesIcons } from '../styles/icons'
-import { getColor } from '../utils/getColor'
+import getColor from '../utils/getColor'
 import { getMin, getMax } from '../styles/getMaxMin'
 import type { JSX } from 'react'
 

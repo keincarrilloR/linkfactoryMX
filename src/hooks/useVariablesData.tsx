@@ -1,7 +1,7 @@
 import { Droplet, Gauge, PlugZap, Zap } from 'lucide-react'
 import { useSocket } from './useSocket'
 import { classesIcons } from '../styles/icons'
-import { getColor } from '../utils/getColor'
+import getColor from '../utils/getColor'
 import { getMax, getMin } from '../styles/getMaxMin'
 import type { JSX } from 'react'
 
