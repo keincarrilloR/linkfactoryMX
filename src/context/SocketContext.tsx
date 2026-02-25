@@ -16,7 +16,7 @@ type SocketProviderProps = {
 }
 
 export const SocketProvider = ({ children }: SocketProviderProps) => {
-  const [maquinaData, setMaquinaData] = useState<MaquinaData | null>(null)
+  const [maquinasData, setMaquinasData] = useState<MaquinaData[]>([])
   const [isConnected, setIsConnected] = useState(false)
 
   const socketRef = useRef<WebSocket | null>(null)
@@ -33,9 +33,12 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
     socket.onmessage = event => {
       try {
         const data = JSON.parse(event.data)
-        if (data?.mx001) {
-          setMaquinaData(data.mx001)
-        }
+        const ids = ['mx001', 'mx002', 'mx003', 'mxsl1', 'mxrs1']
+        const nuevas: MaquinaData[] = ids
+          .filter(id => data[id])
+          .map(id => ({ id, ...data[id] }))
+
+        setMaquinasData(nuevas)
       } catch (error) {
         console.error(error)
       }
@@ -54,8 +57,11 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
     }
   }, [])
 
+  const getMaquina = (id: string) =>
+    maquinasData.find(maquina => maquina.id === id)
+
   return (
-    <SocketContext.Provider value={{ maquinaData, isConnected }}>
+    <SocketContext.Provider value={{ maquinasData, getMaquina, isConnected }}>
       {children}
     </SocketContext.Provider>
   )

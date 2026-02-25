@@ -15,10 +15,10 @@ interface VariableData {
   icon: JSX.Element
 }
 
-export const useVariablesData = (): VariableData[] => {
-  const { maquinaData } = useSocket()
-  const v = maquinaData?.variables
-  const estado = maquinaData?.informativo?.estadoYRun?.estadoMol1
+export const useVariablesData = (maquinaId: string): VariableData[] => {
+  const { getMaquina } = useSocket()
+  const v = getMaquina(maquinaId)?.variables
+  const estado = getMaquina(maquinaId)?.informativo?.estadoYRun?.estadoMol1
 
   return [
     {

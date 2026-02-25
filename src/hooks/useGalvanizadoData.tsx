@@ -15,9 +15,9 @@ interface GalvanizadoData {
   icon: JSX.Element
 }
 
-export const useGalvanizadoData = (): GalvanizadoData[] => {
-  const { maquinaData } = useSocket()
-  const v = maquinaData?.variables
+export const useGalvanizadoData = (maquinaId: string): GalvanizadoData[] => {
+  const { getMaquina } = useSocket()
+  const v = getMaquina(maquinaId)?.variables
 
   return [
     {
