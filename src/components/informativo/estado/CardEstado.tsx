@@ -10,9 +10,9 @@ const CardEstado = ({ maquinaId }: Props) => {
   const { getMaquina } = useSocket()
   const data = getMaquina(maquinaId)
 
-  const estado = data?.informativo?.estadoYRun?.estadoMol1
-  const turno = data?.informativo?.estadoYRun?.turnoMol1
-  const piezas = data?.informativo?.estadoYRun?.piezasMol1
+  const estado = data?.informativo?.estadoYRun?.estado
+  const turno = data?.informativo?.estadoYRun?.turno
+  const piezas = data?.informativo?.estadoYRun?.piezas
   const maquina = data?.informativo?.tonelaje?.maquina
 
   return (
