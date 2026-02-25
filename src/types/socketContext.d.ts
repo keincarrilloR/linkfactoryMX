@@ -1,7 +1,8 @@
 import { MaquinaData } from './maquinaData'
 
 type SocketContextType = {
-  maquinaData: MaquinaData | null
+  maquinasData: MaquinaData[]
+  getMaquina: (id: string) => MaquinaData | undefined
   isConnected: boolean
 }
 

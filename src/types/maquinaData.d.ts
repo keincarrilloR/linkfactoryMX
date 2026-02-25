@@ -58,6 +58,8 @@ interface Variables {
 }
 
 interface MaquinaData {
+  id: string
+  nombre: string
   informativo: Informativo
   variables: Variables
 }
