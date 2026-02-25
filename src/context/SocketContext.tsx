@@ -43,11 +43,10 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
 
     socket.onclose = () => {
       setIsConnected(false)
-
+      alert('Reintentando conexión...')
       setTimeout(() => {
-        console.log('Reintentando conexion...')
         window.location.reload()
-      }, 10000)
+      }, 5000)
     }
 
     return () => {
