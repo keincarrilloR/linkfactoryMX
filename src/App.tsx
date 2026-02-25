@@ -8,6 +8,7 @@ import Clock from './components/Clock'
 const App = () => {
   return (
     <DashboardLayout>
+      {/* // Recorremos las maquinas definidar en la config */}
       {MAQUINAS.map(({ id, nombre }) => (
         <div className="grid gap-6" key={id}>
           <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 border-b border-border gap-3">

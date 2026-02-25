@@ -64,6 +64,7 @@ interface Variables {
   potThermatool?: Valores
 }
 
+// Tipo para cada Maquina
 interface MaquinaData {
   id: string
   nombre: string
