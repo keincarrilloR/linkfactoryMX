@@ -1,33 +1,61 @@
 import StatusCard from '../cards/StatusCard'
 import Title from '../Title'
-import { useVariablesData } from '../../hooks/useVariablesData'
+import { useSocket } from '../../hooks/useSocket'
+import { VARIABLES_KEYS } from '../../config/maquinas'
+import getColor from '../../utils/getColor'
+import type { colors } from '../../types/colors'
 
 interface Props {
   maquinaId: string
 }
 
 const Variables = ({ maquinaId }: Props) => {
-  const variablesData = useVariablesData(maquinaId)
+  const { getMaquina } = useSocket()
+  const maquina = getMaquina(maquinaId)
+  const variables = maquina?.variables
+  const estado = maquina?.informativo?.estadoYRun?.estado
+
+  if (!variables) return null
+
+  const items = VARIABLES_KEYS.map(({ key, grafana, icon, transform }) => {
+    const variable = variables[key]
+    if (!variable) return null
+
+    const min = Number(variable.maxMinNom?.dbp_valmin ?? 0)
+    const max = Number(variable.maxMinNom?.dbp_valmax ?? 0)
+    const nom = Number(variable.maxMinNom?.dbp_valnom ?? 0)
+    const raw = variable.actual ?? 0
+    const value = transform ? transform(raw) : raw
+
+    return {
+      key,
+      title: variable.nombre ?? key,
+      value,
+      min,
+      max,
+      color: getColor(min, max, nom, variable.actual ?? 0, estado) as colors,
+      grafana,
+      icon
+    }
+  })
 
   return (
     <>
       <Title title="Variables" />
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {variablesData.map(
-          ({ title, value, grafana, min, max, color, icon }) => (
-            <StatusCard
-              key={title}
-              title={title}
-              value={value}
-              grafana={grafana}
-              min={min}
-              max={max}
-              color={color}
-            >
-              {icon}
-            </StatusCard>
-          )
-        )}
+        {items.map(item => (
+          <StatusCard
+            key={item!.key}
+            title={item!.title}
+            value={item!.value}
+            min={item!.min}
+            max={item!.max}
+            color={item!.color}
+            grafana={item!.grafana}
+          >
+            {item!.icon}
+          </StatusCard>
+        ))}
       </section>
     </>
   )
