@@ -10,6 +10,7 @@ interface MaxMinNom {
 }
 
 export interface Valores {
+  nombre?: string
   actual: number
   maxMinNom: MaxMinNom
 }
@@ -37,7 +38,7 @@ interface Informativo {
   tonelaje: Tonelaje
 }
 
-interface Variables {
+export interface Variables {
   // Molino 1
   presNitrogeno?: Valores
   tempZinc?: Valores
