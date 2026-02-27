@@ -1,7 +1,7 @@
 import StatusCard from '../cards/StatusCard'
 import Title from '../Title'
 import { useSocket } from '../../hooks/useSocket'
-import { GALVANIZADO_KEYS } from '../../config/maquinas'
+import { GALVANIZADO_KEYS, MAQUINAS } from '../../config/maquinas'
 import getColor from '../../utils/getColor'
 import type { colors } from '../../types/colors'
 
@@ -15,7 +15,9 @@ const Galvanizado = ({ maquinaId }: Props) => {
 
   if (!variables) return null
 
-  const items = GALVANIZADO_KEYS.map(({ key, grafana, icon, transform }) => {
+  const maquinaIndex = MAQUINAS.findIndex(maquina => maquina.id === maquinaId)
+  const keysActuales = GALVANIZADO_KEYS[maquinaIndex] ?? []
+  const items = keysActuales.map(({ key, grafana, icon, transform }) => {
     const variable = variables[key]
     if (!variable) return null
 

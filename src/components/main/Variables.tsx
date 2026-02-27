@@ -1,7 +1,7 @@
 import StatusCard from '../cards/StatusCard'
 import Title from '../Title'
 import { useSocket } from '../../hooks/useSocket'
-import { VARIABLES_KEYS } from '../../config/maquinas'
+import { MAQUINAS, VARIABLES_KEYS } from '../../config/maquinas'
 import getColor from '../../utils/getColor'
 import type { colors } from '../../types/colors'
 
@@ -17,7 +17,10 @@ const Variables = ({ maquinaId }: Props) => {
 
   if (!variables) return null
 
-  const items = VARIABLES_KEYS.map(({ key, grafana, icon, transform }) => {
+  const maquinaIndex = MAQUINAS.findIndex(maquina => maquina.id === maquinaId)
+  const keysActuales = VARIABLES_KEYS[maquinaIndex] ?? []
+  const items = keysActuales.map(molino => {
+    const { key, grafana, icon, transform } = molino
     const variable = variables[key]
     if (!variable) return null
 

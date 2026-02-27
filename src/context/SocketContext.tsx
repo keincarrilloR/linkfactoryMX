@@ -28,7 +28,8 @@ export const SocketProvider = ({ children }: SocketProviderProps) => {
 
   // La primera vez que se monta el componente, se conecta al WS
   useEffect(() => {
-    const socket = new WebSocket(import.meta.env.VITE_SOCKET_URL)
+    // const socket = new WebSocket(import.meta.env.VITE_SOCKET_URL)
+    const socket = new WebSocket('ws://localhost:8080') // URL del servidor WebSocket
     // Apuntamos la referencia al socket
     socketRef.current = socket
 
