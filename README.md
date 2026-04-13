@@ -1,6 +1,6 @@
-# LinkFactory — MX
+# LinkFactory — MV
 
-Dashboard en tiempo real para el monitoreo de máquinas industriales (molinos, slitter, roscadora) vía WebSocket.
+Dashboard en tiempo real para el monitoreo de máquinas industriales (molinos, slitter, roscadora, etc.) vía WebSocket.
 
 ---
 
@@ -28,7 +28,7 @@ Dashboard en tiempo real para el monitoreo de máquinas industriales (molinos, s
 
 ```bash
 # 1. Clonar el repositorio
-git clone <url-del-repo>
+git clone https://github.com/keincarrilloR/linkfactoryMX.git
 cd linkfactorymx
 
 # 2. Instalar dependencias
@@ -59,7 +59,7 @@ Crea un archivo `.env` en la raíz del proyecto:
 VITE_SOCKET_URL=ws://TU_SERVIDOR:PUERTO
 ```
 
-> Ejemplo: `VITE_SOCKET_URL=ws://monitormx.rymco.io:8080`
+> Ejemplo: `VITE_SOCKET_URL=ws://ip:puerto`
 
 Sin esta variable la app no podrá conectarse al servidor WebSocket y no recibirá datos.
 
@@ -68,7 +68,7 @@ Sin esta variable la app no podrá conectarse al servidor WebSocket y no recibir
 ## Estructura del proyecto
 
 ```
-linkfactorymx/
+linkfactorymv/
 ├── public/
 ├── src/
 │   ├── components/
@@ -114,18 +114,6 @@ linkfactorymx/
 
 ---
 
-## Máquinas configuradas
-
-| ID       | Nombre    | Variables | Galvanizado |
-| -------- | --------- | --------- | ----------- |
-| `mxm001` | Molino 1  | ✅        | ✅          |
-| `mxm002` | Molino 2  | ✅        | ❌          |
-| `mxm003` | Molino 3  | ✅        | ❌          |
-| `mxsl1`  | Slitter   | ❌        | ❌          |
-| `mxrs1`  | Roscadora | ❌        | ❌          |
-
----
-
 ## Código de colores de las tarjetas
 
 | Color      | Significado                                        |
@@ -138,29 +126,6 @@ linkfactorymx/
 | ⬛ Negro   | Sin conexión / valor inválido                      |
 
 ---
-
-## Conexión WebSocket
-
-El servidor WebSocket debe enviar un JSON con la siguiente estructura:
-
-```json
-{
-  "mxm001": {
-    "informativo": {
-      "estadoYRun": { "estado": "Corriendo", "turno": "Matutino", "piezas": 120 },
-      "odtArtDesc": { "odt": "ODT-001", "articulo": "ART-001", "descripcion": "Tubo redondo" },
-      "tonelaje": { "tont": 3.5, "maquina": "mxm001" }
-    },
-    "variables": {
-      "velLinea": {
-        "nombre": "Velocidad de línea",
-        "actual": 45.2,
-        "maxMinNom": { "dbp_valmin": 20, "dbp_valmax": 80, "dbp_valnom": 50, ... }
-      }
-    }
-  }
-}
-```
 
 Si se pierde la conexión, la app notifica al usuario y recarga automáticamente cada 5 segundos.
 
