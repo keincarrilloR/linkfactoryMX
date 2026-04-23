@@ -27,15 +27,10 @@ interface OdtArtDesc {
   descripcion: string
 }
 
-interface Tonelaje {
-  tont: number
-  maquina: string
-}
-
 interface Informativo {
   estadoYRun: EstadoYRun
   odtArtDesc: OdtArtDesc
-  tonelaje: Tonelaje
+  tonelaje: number
 }
 
 export interface Variables {

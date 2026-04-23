@@ -9,9 +9,8 @@ interface Props {
 const Tonelaje = ({ maquinaId }: Props) => {
   const { getMaquina } = useSocket()
   const data = getMaquina(maquinaId)
-
-  const ton = data?.informativo?.tonelaje?.tont ?? 0
-
+  const ton = data?.informativo?.tonelaje ?? 0
+  console.log(ton)
   return (
     <>
       <div className="p-3 sm:p-4 bg-panel rounded-lg flex flex-col gap-4">
