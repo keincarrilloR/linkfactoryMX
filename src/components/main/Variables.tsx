@@ -21,9 +21,11 @@ const Variables = ({ maquinaId }: Props) => {
     maquina => maquina.maquinaId === maquinaId
   )
   const keysActuales = VARIABLES_KEYS[maquinaIndex] ?? []
+
   const items = keysActuales.map(molino => {
     const { key, grafana, icon, transform } = molino
     const variable = variables[key]
+
     if (!variable) return null
 
     const min = Number(variable.maxMinNom?.dbp_valmin ?? 0)
